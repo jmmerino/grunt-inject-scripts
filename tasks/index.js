@@ -49,8 +49,14 @@ module.exports = function (grunt) {
         if (this.data.html) {
             htmlText = grunt.file.read(this.data.html);
             var content = "";
-            for (var i = 0; i < sources.length; i++) {
-                content += '    <script src="' + sources[i] + '"></script>\n';
+            if (this.data.template){
+                for (var i = 0; i < sources.length; i++) {
+                    content += this.data.template.replace('%file_path%', sources[i]) + "\n";
+                }
+            }else{
+                for (var i = 0; i < sources.length; i++) {
+                    content += '    <script src="' + sources[i] + '"></script>\n';
+                }    
             }
             grunt.file.write(this.data.html, htmlText.replace(/\<\!\-\-(\s){0,}scriptinject begin(\s){0,}\-\-\>([\s\S]*?)\<\!\-\-(\s){0,}scriptinject end(\s){0,}\-\-\>/, '<!-- scriptinject begin -->\n' + content + '    <!-- scriptinject end -->'));
             grunt.log.ok('injected'.blue + ' into ' + this.data.html);
