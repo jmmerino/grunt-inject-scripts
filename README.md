@@ -1,8 +1,8 @@
-grunt-script-inject
+grunt-inject-scripts
 
 #Author
 
-Pedro Rocha
+Jesús Merino, based on Pedro Rocha "grunt-script-inject"
 
 # Description
 
