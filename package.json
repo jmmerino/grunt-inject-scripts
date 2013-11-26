@@ -3,7 +3,7 @@
   "name": "grunt-inject-scripts",
   "main": "tasks/index.js",
   "description": "Automatically injects script tags into a page.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "url": "https://github.com/jmmerino/grunt-inject-scripts"
   },
