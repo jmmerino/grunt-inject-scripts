@@ -10,7 +10,7 @@ module.exports = function (grunt) {
             var vector = [];
             if (typeof this.data.srcs == 'string') {
                 if (this.data.srcs.indexOf("*") != -1) {
-                    var aux = grunt.file.expandMapping(this.data.srcs[i], '');
+                    var aux = grunt.file.expandMapping(this.data.srcs, '');
                     for (var i = 0; i < aux.length; i++) {
                         vector[i] = aux[i].dest;
                     }
